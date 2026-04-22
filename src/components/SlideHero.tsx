@@ -22,11 +22,11 @@ export function SlideHero({ onStart }: SlideHeroProps) {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
         whileTap={{ scale: 0.95 }}
-        className="relative h-32 w-32 rounded-full gold-border bg-wedding-gold/10 backdrop-blur-sm flex items-center justify-center cursor-pointer group"
+        className="relative h-36 w-36 rounded-full gold-border bg-wedding-gold/10 backdrop-blur-sm flex items-center justify-center cursor-pointer group"
       >
         <div className="absolute inset-0 rounded-full gold-border pulse-ring" />
-        <span className="font-serif text-lg tracking-wider text-wedding-cream group-hover:text-wedding-gold transition-colors">
-          Start
+        <span className="font-script text-5xl text-wedding-gold gold-glow group-hover:scale-110 transition-transform duration-300">
+          JL
         </span>
       </motion.button>
 
@@ -36,7 +36,7 @@ export function SlideHero({ onStart }: SlideHeroProps) {
         transition={{ delay: 0.9 }}
         className="text-xs tracking-[0.2em] text-wedding-cream/50 font-serif"
       >
-        Tap to start
+        Tap to open
       </motion.p>
     </div>
   );
