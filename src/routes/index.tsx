@@ -8,13 +8,7 @@ import { SlideCeremony } from "@/components/SlideCeremony";
 import { SlideRegistry } from "@/components/SlideRegistry";
 import { SlideMessages } from "@/components/SlideMessages";
 import { SlideRSVP } from "@/components/SlideRSVP";
-import bgHero from "@/assets/bg-hero.jpg";
-import bgFlowers from "@/assets/bg-flowers.jpg";
-import bgInvite from "@/assets/bg-invite.jpg";
-import bgVenue from "@/assets/bg-venue.jpg";
-import bgRegistry from "@/assets/bg-registry.jpg";
-import bgMessages from "@/assets/bg-messages.jpg";
-import bgRsvp from "@/assets/bg-rsvp.jpg";
+import { slideBackgrounds } from "@/config/backgrounds";
 
 export const Route = createFileRoute("/")({
   component: WeddingInvitation,
@@ -45,31 +39,31 @@ function WeddingInvitation() {
       className="h-[100dvh] overflow-y-auto snap-y snap-mandatory"
       style={{ scrollSnapType: "y mandatory" }}
     >
-      <WeddingSlide backgroundImage={bgHero} showSwipeUp={false}>
+      <WeddingSlide backgroundImage={slideBackgrounds.hero} showSwipeUp={false}>
         <SlideHero onStart={() => scrollToSlide(1)} />
       </WeddingSlide>
 
-      <WeddingSlide backgroundImage={bgFlowers} onNext={() => scrollToSlide(2)}>
+      <WeddingSlide backgroundImage={slideBackgrounds.names} onNext={() => scrollToSlide(2)}>
         <SlideNames />
       </WeddingSlide>
 
-      <WeddingSlide backgroundImage={bgInvite} onNext={() => scrollToSlide(3)}>
+      <WeddingSlide backgroundImage={slideBackgrounds.invite} onNext={() => scrollToSlide(3)}>
         <SlideInvite />
       </WeddingSlide>
 
-      <WeddingSlide backgroundImage={bgVenue} onNext={() => scrollToSlide(4)}>
+      <WeddingSlide backgroundImage={slideBackgrounds.ceremony} onNext={() => scrollToSlide(4)}>
         <SlideCeremony />
       </WeddingSlide>
 
-      <WeddingSlide backgroundImage={bgRegistry} onNext={() => scrollToSlide(5)}>
+      <WeddingSlide backgroundImage={slideBackgrounds.registry} onNext={() => scrollToSlide(5)}>
         <SlideRegistry />
       </WeddingSlide>
 
-      <WeddingSlide backgroundImage={bgMessages} onNext={() => scrollToSlide(6)}>
+      <WeddingSlide backgroundImage={slideBackgrounds.messages} onNext={() => scrollToSlide(6)}>
         <SlideMessages />
       </WeddingSlide>
 
-      <WeddingSlide backgroundImage={bgRsvp} showSwipeUp={false}>
+      <WeddingSlide backgroundImage={slideBackgrounds.rsvp} showSwipeUp={false}>
         <SlideRSVP />
       </WeddingSlide>
     </div>
