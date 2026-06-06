@@ -36,7 +36,7 @@ function WeddingInvitation() {
   return (
     <div
       ref={containerRef}
-      className="h-[100dvh] overflow-y-auto snap-y snap-mandatory"
+      className="h-[100dvh] overflow-y-auto snap-y snap-mandatory scrollbar-hide"
       style={{ scrollSnapType: "y mandatory" }}
     >
       <WeddingSlide backgroundImage={slideBackgrounds.hero} showSwipeUp={false}>
