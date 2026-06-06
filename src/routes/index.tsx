@@ -6,12 +6,14 @@ import { SlideNames } from "@/components/SlideNames";
 import { SlideInvite } from "@/components/SlideInvite";
 import { SlideCeremony } from "@/components/SlideCeremony";
 import { SlideRegistry } from "@/components/SlideRegistry";
+import { SlideMessages } from "@/components/SlideMessages";
 import { SlideRSVP } from "@/components/SlideRSVP";
 import bgHero from "@/assets/bg-hero.jpg";
 import bgFlowers from "@/assets/bg-flowers.jpg";
 import bgInvite from "@/assets/bg-invite.jpg";
 import bgVenue from "@/assets/bg-venue.jpg";
 import bgRegistry from "@/assets/bg-registry.jpg";
+import bgMessages from "@/assets/bg-messages.jpg";
 import bgRsvp from "@/assets/bg-rsvp.jpg";
 
 export const Route = createFileRoute("/")({
@@ -61,6 +63,10 @@ function WeddingInvitation() {
 
       <WeddingSlide backgroundImage={bgRegistry} onNext={() => scrollToSlide(5)}>
         <SlideRegistry />
+      </WeddingSlide>
+
+      <WeddingSlide backgroundImage={bgMessages} onNext={() => scrollToSlide(6)}>
+        <SlideMessages />
       </WeddingSlide>
 
       <WeddingSlide backgroundImage={bgRsvp} showSwipeUp={false}>
