@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, CalendarPlus } from "lucide-react";
+import { downloadWeddingIcs } from "@/lib/calendar";
 
 export function SlideCeremony() {
   const openMaps = () => {
@@ -45,17 +46,28 @@ export function SlideCeremony() {
         </p>
       </motion.div>
 
-      <motion.button
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.6 }}
         viewport={{ once: true }}
-        onClick={openMaps}
-        className="gold-border rounded-full px-8 py-3 bg-wedding-gold/10 backdrop-blur-sm text-wedding-cream font-serif text-sm tracking-[0.15em] uppercase hover:bg-wedding-gold/20 transition-colors cursor-pointer flex items-center gap-2"
+        className="flex flex-col gap-3 w-full items-center"
       >
-        <MapPin size={16} className="text-wedding-gold" />
-        Location Map
-      </motion.button>
+        <button
+          onClick={openMaps}
+          className="gold-border rounded-full px-7 py-3 bg-wedding-gold/10 backdrop-blur-sm text-wedding-cream font-serif text-sm tracking-[0.15em] uppercase hover:bg-wedding-gold/20 transition-colors cursor-pointer flex items-center gap-2"
+        >
+          <MapPin size={16} className="text-wedding-gold" />
+          Location Map
+        </button>
+        <button
+          onClick={downloadWeddingIcs}
+          className="gold-border rounded-full px-7 py-3 bg-wedding-gold/10 backdrop-blur-sm text-wedding-cream font-serif text-sm tracking-[0.15em] uppercase hover:bg-wedding-gold/20 transition-colors cursor-pointer flex items-center gap-2"
+        >
+          <CalendarPlus size={16} className="text-wedding-gold" />
+          Add to Calendar
+        </button>
+      </motion.div>
     </div>
   );
 }
