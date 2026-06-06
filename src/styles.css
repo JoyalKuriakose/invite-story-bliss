@@ -163,7 +163,16 @@
   @keyframes swipe-bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 
   @keyframes fade-in-up {
     from { opacity: 0; transform: translateY(30px); }
