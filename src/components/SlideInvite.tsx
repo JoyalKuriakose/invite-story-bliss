@@ -8,15 +8,15 @@ export function SlideInvite() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="flex w-[min(78vw,360px)] flex-col items-center text-center"
-        style={{ transform: "translateY(-8%)" }}
+        className="flex w-[min(82vw,420px)] flex-col items-center text-center"
+        style={{ transform: "translateY(-6%)" }}
       >
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="font-serif italic leading-[1.9] text-[#6b5b2e]"
-          style={{ fontSize: "clamp(0.95rem, 2.2vw, 1.15rem)" }}
+          className="font-serif font-semibold italic leading-[1.85] text-[#3d3115] drop-shadow-[0_1px_2px_rgba(255,255,255,0.4)]"
+          style={{ fontSize: "clamp(1.15rem, 3.2vw, 1.45rem)" }}
         >
           “ഇതു യഹോവയാൽ സംഭവിച്ചു;
           <br />
@@ -29,15 +29,15 @@ export function SlideInvite() {
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ delay: 0.7, duration: 0.8 }}
-          className="my-4 h-px w-16 bg-[#6b5b2e]/60"
+          className="my-5 h-[2px] w-20 bg-[#3d3115]/70"
         />
 
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="font-serif tracking-[0.15em] text-[#6b5b2e]"
-          style={{ fontSize: "clamp(0.8rem, 1.6vw, 0.95rem)" }}
+          className="font-serif font-semibold tracking-[0.18em] text-[#3d3115]"
+          style={{ fontSize: "clamp(0.95rem, 2.2vw, 1.1rem)" }}
         >
           — സങ്കീർത്തനങ്ങൾ 118:23
         </motion.p>
