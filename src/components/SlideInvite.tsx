@@ -21,7 +21,7 @@ export function SlideInvite() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 1 }}
-            className="font-serif text-[16px] leading-7 text-white gold-glow"
+            className="font-serif text-[16px] leading-7 text-[#6b5b2e] gold-glow"
           >
             “ഇതു യഹോവയാൽ സംഭവിച്ചു;
             <br />
@@ -35,7 +35,7 @@ export function SlideInvite() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="mt-5 font-serif text-[18px] tracking-wide text-white"
+            className="mt-5 font-serif text-[18px] tracking-wide text-[#6b5b2e]"
           >
             — സങ്കീർത്തനങ്ങൾ 118:23
           </motion.p>
