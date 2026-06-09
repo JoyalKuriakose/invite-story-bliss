@@ -6,6 +6,7 @@ interface WeddingSlideProps {
   children: ReactNode;
   showSwipeUp?: boolean;
   onNext?: () => void;
+  noOverlay?: boolean;
 }
 
 export function WeddingSlide({ backgroundImage, children, showSwipeUp = true, onNext }: WeddingSlideProps) {
