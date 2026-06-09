@@ -11,11 +11,11 @@ interface WeddingSlideProps {
 
 export function WeddingSlide({ backgroundImage, children, showSwipeUp = true, onNext, noOverlay = false }: WeddingSlideProps) {
   return (
-    <div className="relative h-dvh w-full shrink-0 overflow-hidden snap-start snap-always">
+    <div className="relative h-dvh w-full shrink-0 overflow-hidden snap-start snap-always bg-black">
       <img
         src={backgroundImage}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover"
+        className={`absolute inset-0 h-full w-full ${noOverlay ? "object-contain" : "object-cover"}`}
         loading="lazy"
       />
       {!noOverlay && <div className="wedding-overlay absolute inset-0" />}
