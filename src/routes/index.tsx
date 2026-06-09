@@ -48,11 +48,11 @@ function WeddingInvitation() {
         <SlideNames />
       </WeddingSlide>
 
-      <WeddingSlide backgroundImage={slideBackgrounds.invite} onNext={() => scrollToSlide(3)}>
+      <WeddingSlide backgroundImage={slideBackgrounds.invite} onNext={() => scrollToSlide(3)} noOverlay>
         <SlideInvite />
       </WeddingSlide>
 
-      <WeddingSlide backgroundImage={slideBackgrounds.ceremony} onNext={() => scrollToSlide(4)}>
+      <WeddingSlide backgroundImage={slideBackgrounds.ceremony} onNext={() => scrollToSlide(4)} noOverlay>
         <SlideCeremony />
       </WeddingSlide>
 

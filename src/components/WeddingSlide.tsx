@@ -6,9 +6,10 @@ interface WeddingSlideProps {
   children: ReactNode;
   showSwipeUp?: boolean;
   onNext?: () => void;
+  noOverlay?: boolean;
 }
 
-export function WeddingSlide({ backgroundImage, children, showSwipeUp = true, onNext }: WeddingSlideProps) {
+export function WeddingSlide({ backgroundImage, children, showSwipeUp = true, onNext, noOverlay = false }: WeddingSlideProps) {
   return (
     <div className="relative h-dvh w-full shrink-0 overflow-hidden snap-start snap-always">
       <img
@@ -17,7 +18,7 @@ export function WeddingSlide({ backgroundImage, children, showSwipeUp = true, on
         className="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
       />
-      <div className="wedding-overlay absolute inset-0" />
+      {!noOverlay && <div className="wedding-overlay absolute inset-0" />}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-8 text-center">
         {children}
       </div>
