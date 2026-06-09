@@ -10,11 +10,7 @@ interface WeddingSlideProps {
 
 export function WeddingSlide({ backgroundImage, children, showSwipeUp = true, onNext }: WeddingSlideProps) {
   return (
-<<<<<<< HEAD
     <div className="relative h-dvh w-full shrink-0 overflow-hidden snap-start snap-always">
-=======
-    <div className="relative h-[100dvh] w-full flex-shrink-0 overflow-hidden snap-start snap-always">
->>>>>>> aaad2adda20dce9e51242ee966b5352f86358c31
       <img
         src={backgroundImage}
         alt=""
