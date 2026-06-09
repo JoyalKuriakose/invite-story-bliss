@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 export function SlideCeremony() {
   return (
     <div
-      className="clear-slide flex w-[min(80vw,380px)] flex-col items-center justify-center gap-5 text-center"
-      style={{ transform: "translateY(-6%)" }}
+      className="clear-slide flex w-[min(84vw,440px)] flex-col items-center justify-center gap-5 text-center"
+      style={{ transform: "translateY(-4%)" }}
     >
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="font-serif italic leading-relaxed text-[#6b5b2e]"
-        style={{ fontSize: "clamp(0.85rem, 1.8vw, 1rem)" }}
+        className="font-serif font-semibold italic leading-relaxed text-[#3d3115] drop-shadow-[0_1px_2px_rgba(255,255,255,0.4)]"
+        style={{ fontSize: "clamp(1.05rem, 2.6vw, 1.25rem)" }}
       >
         "Two souls with but a single thought,
         <br />
@@ -24,7 +24,7 @@ export function SlideCeremony() {
         whileInView={{ scaleX: 1 }}
         transition={{ delay: 0.3, duration: 0.8 }}
         viewport={{ once: true }}
-        className="h-px w-14 bg-[#6b5b2e]/60"
+        className="h-[2px] w-16 bg-[#3d3115]/70"
       />
 
       <motion.div
@@ -35,20 +35,20 @@ export function SlideCeremony() {
         className="flex flex-col items-center gap-2"
       >
         <p
-          className="font-serif uppercase tracking-[0.3em] text-[#6b5b2e]"
-          style={{ fontSize: "clamp(0.6rem, 1.3vw, 0.75rem)" }}
+          className="font-serif font-semibold uppercase tracking-[0.3em] text-[#3d3115]"
+          style={{ fontSize: "clamp(0.8rem, 1.8vw, 0.95rem)" }}
         >
           Together with their families
         </p>
         <p
-          className="font-serif tracking-wide text-[#6b5b2e]"
-          style={{ fontSize: "clamp(0.95rem, 2vw, 1.15rem)" }}
+          className="font-serif font-bold tracking-wide text-[#3d3115]"
+          style={{ fontSize: "clamp(1.15rem, 2.6vw, 1.4rem)" }}
         >
           The Najjar &amp; Kendirjian Families
         </p>
         <p
-          className="font-serif uppercase tracking-[0.2em] text-[#6b5b2e]"
-          style={{ fontSize: "clamp(0.6rem, 1.2vw, 0.7rem)" }}
+          className="font-serif font-semibold uppercase tracking-[0.2em] text-[#3d3115]"
+          style={{ fontSize: "clamp(0.75rem, 1.6vw, 0.9rem)" }}
         >
           request the honour of your presence
         </p>
@@ -59,17 +59,17 @@ export function SlideCeremony() {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.7, duration: 0.8 }}
         viewport={{ once: true }}
-        className="rounded-lg border border-[#6b5b2e]/40 px-6 py-3"
+        className="rounded-lg border-2 border-[#3d3115]/60 px-6 py-3"
       >
         <p
-          className="mb-1 font-serif uppercase tracking-[0.3em] text-[#6b5b2e]"
-          style={{ fontSize: "clamp(0.6rem, 1.2vw, 0.7rem)" }}
+          className="mb-1 font-serif font-semibold uppercase tracking-[0.3em] text-[#3d3115]"
+          style={{ fontSize: "clamp(0.75rem, 1.5vw, 0.9rem)" }}
         >
           Save the Date
         </p>
         <p
-          className="font-serif text-[#6b5b2e]"
-          style={{ fontSize: "clamp(1.5rem, 3.5vw, 2rem)" }}
+          className="font-serif font-bold text-[#3d3115]"
+          style={{ fontSize: "clamp(1.85rem, 4.5vw, 2.4rem)" }}
         >
           June 22, 2024
         </p>
