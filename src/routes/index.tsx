@@ -36,10 +36,17 @@ function WeddingInvitation() {
   return (
     <div
       ref={containerRef}
+<<<<<<< HEAD
       className="h-dvh overflow-y-auto snap-y snap-mandatory scrollbar-hide"
       style={{ scrollSnapType: "y mandatory" }}
     >
       <WeddingSlide backgroundImage={slideBackgrounds.heroVideo} showSwipeUp={false}>
+=======
+      className="h-[100dvh] overflow-y-auto snap-y snap-mandatory scrollbar-hide"
+      style={{ scrollSnapType: "y mandatory" }}
+    >
+      <WeddingSlide backgroundImage={slideBackgrounds.hero} showSwipeUp={false}>
+>>>>>>> aaad2adda20dce9e51242ee966b5352f86358c31
         <SlideHero onStart={() => scrollToSlide(1)} />
       </WeddingSlide>
 
