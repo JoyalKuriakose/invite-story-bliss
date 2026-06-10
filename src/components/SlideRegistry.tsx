@@ -5,23 +5,29 @@ import { downloadWeddingIcs } from "@/lib/calendar";
 export function SlideRegistry() {
   const openMaps = () => {
     window.open(
-      "https://www.google.com/maps/search/Bois+de+Roses+Faitroun+Lebanon",
+      "https://maps.app.goo.gl/x3ZrmJSKoFHFHLQ28?g_st=aw",
       "_blank"
     );
   };
 
   return (
-    <div className="flex flex-col items-center gap-8 max-w-sm">
+    <div className="flex flex-col items-center gap-8 max-w-sm text-center px-4">
+      {/* Heading */}
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-xs tracking-[0.3em] uppercase text-wedding-gold/80 font-serif"
+        className="text-xs tracking-[0.35em] uppercase font-serif font-bold"
+        style={{
+          color: "#ffffff",
+          textShadow: "0 5px 10px rgba(0,0,0,0.85)",
+        }}
       >
         The Ceremony
       </motion.p>
 
+      {/* Main Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -29,46 +35,154 @@ export function SlideRegistry() {
         viewport={{ once: true }}
         className="flex flex-col items-center gap-6"
       >
-        <div className="flex items-center gap-3 text-wedding-cream">
-          <Calendar size={20} className="text-wedding-gold" />
-          <span className="font-serif text-lg">Saturday, June 22, 2024</span>
+        {/* Date */}
+        <div className="flex items-center gap-3">
+          <Calendar
+            size={25}
+            style={{
+              color: "#ffffff",
+              filter: "drop-shadow(0 0 15px rgba(255,215,0,0.7))",
+            }}
+          />
+
+          <span
+            className="font-serif font-bold"
+            style={{
+              fontSize: "clamp(1.5rem, 4vw, 2rem)",
+            color: "#ffffff",
+            fontWeight: "700",
+            lineHeight: "1.5",
+            textShadow: `
+              0 2px 10px rgba(0,0,0,0.95),
+              0 0 12px rgba(255,255,255,0.15)
+              `,
+              letterSpacing: "0.5px",
+            }}
+          >
+            Monday, August 24, 2026
+          </span>
         </div>
 
-        <div className="flex items-center gap-3 text-wedding-cream">
-          <MapPin size={20} className="text-wedding-gold" />
-          <span className="font-serif text-lg">6:00 PM</span>
-        </div>
+        {/* Time */}
+        
 
-        <div className="h-px w-12 bg-wedding-gold/40" />
+          <span
+            className="font-serif font-bold"
+            style={{
+              fontSize: "clamp(1.25rem, 3vw, 1.25rem)",
+              color: "#ffffff",
+              textShadow: "0 2px 8px rgba(0,0,0,0.95)",
+              letterSpacing: "0.4px",
+            }}
+          >
+            11:00 AM
+          </span>
+        
 
-        <p className="font-serif text-2xl text-wedding-cream gold-glow">
-          Bois de Roses
-        </p>
-        <p className="text-sm text-wedding-cream/70 font-serif tracking-wide">
-          Faitroun, Lebanon
-        </p>
+        {/* Divider */}
+        <div
+          className="h-px w-16"
+          style={{
+            background:
+              "linear-gradient(to right, transparent, #ffd700, transparent)",
+          }}
+        />
+
+       {/* Venue + Location with Icon */}
+<div className="flex justify-center w-full">
+  <div className="relative flex flex-col items-center text-center">
+    
+    {/* Map Icon */}
+    <MapPin
+      size={24}
+      style={{
+        color: "#ffd700",
+        filter: "drop-shadow(0 0 6px rgba(255,215,0,0.7))",
+        position: "absolute",
+        left: "-34px",
+        top: "8px",
+      }}
+    />
+
+    {/* Venue */}
+    <p
+      className="font-serif"
+      style={{
+        fontSize: "clamp(1.5rem, 4vw, 2rem)",
+        color: "#ffffff",
+        fontWeight: "700",
+        lineHeight: "1.5",
+        textShadow: `
+          0 2px 10px rgba(0,0,0,0.95),
+          0 0 12px rgba(255,255,255,0.15)
+        `,
+      }}
+    >
+      St George Jacobite
+      <br />
+      Syrian Church
+      <br />
+      Ponpally
+    </p>
+
+    {/* Location */}
+    <p
+      className="font-serif tracking-wide mt-2"
+      style={{
+        fontSize: "1rem",
+        color: "#f5e6c8",
+        fontWeight: "600",
+        textShadow: "0 2px 8px rgba(0,0,0,0.95)",
+        letterSpacing: "0.5px",
+      }}
+    >
+      Kottayam, Kerala
+    </p>
+  </div>
+</div>
       </motion.div>
 
+      {/* Buttons */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.6 }}
         viewport={{ once: true }}
-        className="flex flex-col items-center gap-3 w-full"
+        className="flex flex-col items-center gap-4 w-full"
       >
+        {/* Location Button */}
         <button
           onClick={openMaps}
-          className="gold-border flex items-center gap-2 rounded-full bg-wedding-gold/10 px-7 py-3 text-sm uppercase tracking-[0.15em] text-wedding-cream backdrop-blur-sm transition-colors hover:bg-wedding-gold/20 cursor-pointer font-serif"
+          className="flex items-center gap-2 rounded-full px-7 py-3 text-sm uppercase tracking-[0.18em] backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-pointer font-serif font-bold"
+          style={{
+            background: "rgba(0,0,0,0.45)",
+            border: "1px solid rgba(255,215,0,0.55)",
+            color: "#ffffff",
+            boxShadow: `
+              0 0 12px rgba(255,215,0,0.25),
+              0 2px 10px rgba(0,0,0,0.35)
+            `,
+          }}
         >
-          <MapPin size={16} className="text-wedding-gold" />
+          <MapPin size={16} style={{ color: "#ffd700" }} />
           Location Map
         </button>
 
+        {/* Calendar Button */}
         <button
           onClick={downloadWeddingIcs}
-          className="gold-border flex items-center gap-2 rounded-full bg-wedding-gold/10 px-7 py-3 text-sm uppercase tracking-[0.15em] text-wedding-cream backdrop-blur-sm transition-colors hover:bg-wedding-gold/20 cursor-pointer font-serif"
+          className="flex items-center gap-2 rounded-full px-7 py-3 text-sm uppercase tracking-[0.18em] backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-pointer font-serif font-bold"
+          style={{
+            background: "rgba(0,0,0,0.45)",
+            border: "1px solid rgba(255,215,0,0.55)",
+            color: "#ffffff",
+            boxShadow: `
+              0 0 12px rgba(255,215,0,0.25),
+              0 2px 10px rgba(0,0,0,0.35)
+            `,
+          }}
         >
-          <CalendarPlus size={16} className="text-wedding-gold" />
+          <CalendarPlus size={16} style={{ color: "#ffd700" }} />
           Add to Calendar
         </button>
       </motion.div>
