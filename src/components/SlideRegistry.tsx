@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, CalendarPlus } from "lucide-react";
-import { downloadWeddingIcs } from "@/lib/calendar";
 
 export function SlideRegistry() {
+  
+  // Google Maps
   const openMaps = () => {
     window.open(
       "https://maps.app.goo.gl/x3ZrmJSKoFHFHLQ28?g_st=aw",
@@ -10,8 +11,21 @@ export function SlideRegistry() {
     );
   };
 
+  // Google Calendar
+  const addToGoogleCalendar = () => {
+    const url =
+      "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+      "&text=Jikku+%26+Lena+Wedding+Ceremony" +
+      "&dates=20260824T053000Z/20260824T083000Z" +
+      "&details=Wedding+Ceremony" +
+      "&location=St+George+Jacobite+Syrian+Church+Ponpally,+Kottayam,+Kerala";
+
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="flex flex-col items-center gap-8 max-w-sm text-center px-4">
+
       {/* Heading */}
       <motion.p
         initial={{ opacity: 0 }}
@@ -21,7 +35,7 @@ export function SlideRegistry() {
         className="text-xs tracking-[0.35em] uppercase font-serif font-bold"
         style={{
           color: "#ffffff",
-          textShadow: "0 5px 10px rgba(0,0,0,0.85)",
+          textShadow: "0 2px 8px rgba(0,0,0,0.85)",
         }}
       >
         The Ceremony
@@ -35,26 +49,34 @@ export function SlideRegistry() {
         viewport={{ once: true }}
         className="flex flex-col items-center gap-6"
       >
+
         {/* Date */}
-        <div className="flex items-center gap-3">
+        <div className="relative flex justify-center w-full">
+
+          {/* Calendar Icon */}
           <Calendar
-            size={25}
+            size={22}
             style={{
               color: "#ffffff",
-              filter: "drop-shadow(0 0 15px rgba(255,215,0,0.7))",
+              filter: "drop-shadow(0 0 8px rgba(255,215,0,0.7))",
+              position: "absolute",
+              left: "-10px",
+              top: "50%",
+              transform: "translateY(-50%)",
             }}
           />
 
+          {/* Date Text */}
           <span
-            className="font-serif font-bold"
+            className="font-serif font-bold text-center"
             style={{
               fontSize: "clamp(1.5rem, 4vw, 2rem)",
-            color: "#ffffff",
-            fontWeight: "700",
-            lineHeight: "1.5",
-            textShadow: `
-              0 2px 10px rgba(0,0,0,0.95),
-              0 0 12px rgba(255,255,255,0.15)
+              color: "#ffffff",
+              fontWeight: "700",
+              lineHeight: "1.5",
+              textShadow: `
+                0 2px 10px rgba(0,0,0,0.95),
+                0 0 12px rgba(255,255,255,0.15)
               `,
               letterSpacing: "0.5px",
             }}
@@ -64,20 +86,19 @@ export function SlideRegistry() {
         </div>
 
         {/* Time */}
-        
-
+        <div className="flex items-center gap-3">
           <span
             className="font-serif font-bold"
             style={{
-              fontSize: "clamp(1.25rem, 3vw, 1.25rem)",
-              color: "#ffffff",
+              fontSize: "clamp(1rem, 2vw, 1.2rem)",
+              color: "#f5e6c8",
               textShadow: "0 2px 8px rgba(0,0,0,0.95)",
-              letterSpacing: "0.4px",
+              letterSpacing: "0.5px",
             }}
           >
             11:00 AM
           </span>
-        
+        </div>
 
         {/* Divider */}
         <div
@@ -88,58 +109,58 @@ export function SlideRegistry() {
           }}
         />
 
-       {/* Venue + Location with Icon */}
-<div className="flex justify-center w-full">
-  <div className="relative flex flex-col items-center text-center">
-    
-    {/* Map Icon */}
-    <MapPin
-      size={24}
-      style={{
-        color: "#ffd700",
-        filter: "drop-shadow(0 0 6px rgba(255,215,0,0.7))",
-        position: "absolute",
-        left: "-34px",
-        top: "8px",
-      }}
-    />
+        {/* Venue + Location */}
+        <div className="flex justify-center w-full">
+          <div className="relative flex flex-col items-center text-center">
 
-    {/* Venue */}
-    <p
-      className="font-serif"
-      style={{
-        fontSize: "clamp(1.5rem, 4vw, 2rem)",
-        color: "#ffffff",
-        fontWeight: "700",
-        lineHeight: "1.5",
-        textShadow: `
-          0 2px 10px rgba(0,0,0,0.95),
-          0 0 12px rgba(255,255,255,0.15)
-        `,
-      }}
-    >
-      St George Jacobite
-      <br />
-      Syrian Church
-      <br />
-      Ponpally
-    </p>
+            {/* Map Icon */}
+            <MapPin
+              size={24}
+              style={{
+                color: "#ffd700",
+                filter: "drop-shadow(0 0 6px rgba(255,215,0,0.7))",
+                position: "absolute",
+                left: "-34px",
+                top: "8px",
+              }}
+            />
 
-    {/* Location */}
-    <p
-      className="font-serif tracking-wide mt-2"
-      style={{
-        fontSize: "1rem",
-        color: "#f5e6c8",
-        fontWeight: "600",
-        textShadow: "0 2px 8px rgba(0,0,0,0.95)",
-        letterSpacing: "0.5px",
-      }}
-    >
-      Kottayam, Kerala
-    </p>
-  </div>
-</div>
+            {/* Venue */}
+            <p
+              className="font-serif"
+              style={{
+                fontSize: "clamp(1.5rem, 4vw, 2rem)",
+                color: "#ffffff",
+                fontWeight: "700",
+                lineHeight: "1.5",
+                textShadow: `
+                  0 2px 10px rgba(0,0,0,0.95),
+                  0 0 12px rgba(255,255,255,0.15)
+                `,
+              }}
+            >
+              St George Jacobite
+              <br />
+              Syrian Church
+              <br />
+              Ponpally
+            </p>
+
+            {/* Location */}
+            <p
+              className="font-serif tracking-wide mt-2"
+              style={{
+                fontSize: "1rem",
+                color: "#f5e6c8",
+                fontWeight: "600",
+                textShadow: "0 2px 8px rgba(0,0,0,0.95)",
+                letterSpacing: "0.5px",
+              }}
+            >
+              Kottayam, Kerala
+            </p>
+          </div>
+        </div>
       </motion.div>
 
       {/* Buttons */}
@@ -150,6 +171,7 @@ export function SlideRegistry() {
         viewport={{ once: true }}
         className="flex flex-col items-center gap-4 w-full"
       >
+
         {/* Location Button */}
         <button
           onClick={openMaps}
@@ -168,9 +190,9 @@ export function SlideRegistry() {
           Location Map
         </button>
 
-        {/* Calendar Button */}
+        {/* Add to Calendar Button */}
         <button
-          onClick={downloadWeddingIcs}
+          onClick={addToGoogleCalendar}
           className="flex items-center gap-2 rounded-full px-7 py-3 text-sm uppercase tracking-[0.18em] backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-pointer font-serif font-bold"
           style={{
             background: "rgba(0,0,0,0.45)",

@@ -45,11 +45,11 @@ export function SlideCeremony() {
             fontSize: "clamp(2.5rem, 5.5vw, 3.4rem)",
             fontWeight: "700",
             color: "#d4af37",
-            textShadow: `
-              0 2px 4px rgba(0,0,0,0.35),
-              0 0 8px rgba(212,175,55,0.35),
-              0 0 18px rgba(212,175,55,0.25)
-            `,
+            // textShadow: `
+            //   0 2px 4px rgba(0,0,0,0.35),
+            //   0 0 8px rgba(212,175,55,0.35),
+            //   0 0 18px rgba(212,175,55,0.25)
+            // `,
             letterSpacing: "1px",
             lineHeight: "1.1",
           }}
@@ -102,11 +102,11 @@ export function SlideCeremony() {
             fontSize: "clamp(2.5rem, 5.5vw, 3.4rem)",
             fontWeight: "700",
             color: "#d4af37",
-            textShadow: `
-              0 2px 4px rgba(0,0,0,0.35),
-              0 0 8px rgba(212,175,55,0.35),
-              0 0 18px rgba(212,175,55,0.25)
-            `,
+            // textShadow: `
+            //   0 2px 4px rgba(0,0,0,0.35),
+            //   0 0 8px rgba(212,175,55,0.35),
+            //   0 0 18px rgba(212,175,55,0.25)
+            // `,
             letterSpacing: "1px",
             lineHeight: "1.1",
           }}
