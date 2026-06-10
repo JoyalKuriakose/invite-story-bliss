@@ -1,6 +1,9 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
+
+/* =========================
+   FONTS (OPTIMIZED)
+========================= */
 
 @font-face {
   font-family: "Great Vibes";
@@ -38,6 +41,10 @@
     format("woff2");
 }
 
+/* =========================
+   THEME VARIABLES
+========================= */
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -49,22 +56,29 @@
   --color-wedding-gold: var(--wedding-gold);
   --color-wedding-cream: var(--wedding-cream);
 
-  --font-script: var(--font-family-script);
-  --font-serif: var(--font-family-serif);
+  --font-script: var(--font-script);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
 }
 
 :root {
   --radius: 0.625rem;
 
   --background: #000;
-  --foreground: #fff;
+  --foreground: #ffffff;
 
   --wedding-gold: #d4af37;
   --wedding-cream: #fdf8f0;
 
-  --font-family-script: "Great Vibes", cursive;
-  --font-family-serif: "Playfair Display", serif;
+  /* Fonts */
+  --font-script: "Great Vibes", cursive;
+  --font-display: "Playfair Display", serif;
+  --font-body: "Playfair Display", serif;
 }
+
+/* =========================
+   BASE STYLES
+========================= */
 
 @layer base {
   * {
@@ -78,13 +92,16 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-family-serif);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   img,
@@ -92,18 +109,26 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    display: block;
   }
 }
 
+/* =========================
+   WEDDING UTILITIES (IMPROVED)
+========================= */
+
 @layer utilities {
+
+  /* Overlay */
   .wedding-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.30) 0%,
+      rgba(0, 0, 0, 0.25) 0%,
       rgba(0, 0, 0, 0.45) 50%,
-      rgba(0, 0, 0, 0.60) 100%
+      rgba(0, 0, 0, 0.65) 100%
     );
   }
 
@@ -111,16 +136,42 @@
     display: none;
   }
 
-  .gold-glow {
+  /* 🌟 GOLD TEXT (MAIN NAMES) */
+  .wedding-name {
+    font-family: var(--font-script);
+    color: var(--wedding-gold);
     text-shadow:
-      0 0 10px rgba(255, 255, 255, 0.5),
-      0 0 20px rgba(255, 255, 255, 0.3);
+      0 2px 10px rgba(0, 0, 0, 0.6),
+      0 0 18px rgba(212, 175, 55, 0.25);
   }
 
+  /* 📖 BODY TEXT (IMPROVED VISIBILITY) */
+  .wedding-text {
+    font-family: var(--font-body);
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  }
+
+  /* ✨ SUB TEXT */
+  .wedding-subtext {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 500;
+  }
+
+  /* Gold border */
   .gold-border {
     border: 1px solid rgba(212, 175, 55, 0.35);
   }
 
+  /* Glow */
+  .gold-glow {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(255, 255, 255, 0.25);
+  }
+
+  /* Scrollbar hide */
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
@@ -130,6 +181,7 @@
     scrollbar-width: none;
   }
 
+  /* Animations */
   @keyframes fade-in-up {
     from {
       opacity: 0;
@@ -145,29 +197,9 @@
     animation: fade-in-up 0.8s ease-out forwards;
   }
 
-  @keyframes pulse-ring {
-    0% {
-      transform: scale(1);
-      opacity: 0.6;
-    }
-    100% {
-      transform: scale(1.4);
-      opacity: 0;
-    }
-  }
-
-  .pulse-ring {
-    animation: pulse-ring 2s ease-out infinite;
-  }
-
   @keyframes swipe-bounce {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
   }
 
   .swipe-indicator {

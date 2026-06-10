@@ -29,7 +29,7 @@ export function SlideInvite() {
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ delay: 0.7, duration: 0.8 }}
-          className="my-5 h-[2px] w-20 bg-[#3d3115]/70"
+          className="my-5 h-0.5 w-20 bg-[#3d3115]/70"
         />
 
         <motion.p
