@@ -8,15 +8,31 @@ export function SlideInvite() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="flex w-[min(82vw,420px)] flex-col items-center text-center"
+        className="flex w-[min(82vw,440px)] flex-col items-center text-center"
         style={{ transform: "translateY(-6%)" }}
       >
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 1 }}
-          className="font-serif font-semibold italic leading-[1.85] text-[#3d3115] drop-shadow-[0_1px_2px_rgba(255,255,255,0.4)]"
-          style={{ fontSize: "clamp(1.15rem, 3.2vw, 1.45rem)" }}
+          transition={{ delay: 0.2, duration: 1 }}
+          className="wedding-caps text-[0.68rem] mb-5"
+          style={{ color: "#5a4520" }}
+        >
+          A Sacred Verse
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.35, duration: 1 }}
+          className="italic leading-[1.85]"
+          style={{
+            fontFamily: "var(--font-body)",
+            fontWeight: 500,
+            fontSize: "clamp(1.2rem, 3.4vw, 1.55rem)",
+            color: "#3d2f12",
+            textShadow: "0 1px 2px rgba(255,250,235,0.5)",
+          }}
         >
           “ഇതു യഹോവയാൽ സംഭവിച്ചു;
           <br />
@@ -29,17 +45,24 @@ export function SlideInvite() {
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ delay: 0.7, duration: 0.8 }}
-          className="my-5 h-0.5 w-20 bg-[#3d3115]/70"
-        />
+          className="my-6 flex items-center gap-3 w-full justify-center"
+        >
+          <span className="h-px w-14" style={{ background: "rgba(122,90,36,0.6)" }} />
+          <span className="ornament-dot" style={{ background: "#7a5a24" }} />
+          <span className="h-px w-14" style={{ background: "rgba(122,90,36,0.6)" }} />
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="font-serif font-semibold tracking-[0.18em] text-[#3d3115]"
-          style={{ fontSize: "clamp(0.95rem, 2.2vw, 1.1rem)" }}
+          transition={{ delay: 0.85 }}
+          className="wedding-caps"
+          style={{
+            fontSize: "clamp(0.72rem, 1.8vw, 0.85rem)",
+            color: "#3d2f12",
+          }}
         >
-          — സങ്കീർത്തനങ്ങൾ 118:23
+          സങ്കീർത്തനങ്ങൾ · 118 : 23
         </motion.p>
       </motion.div>
     </div>
