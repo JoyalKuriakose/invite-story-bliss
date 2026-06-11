@@ -34,40 +34,38 @@ function WeddingInvitation() {
   }, []);
 
   return (
-    <div className="h-dvh w-full flex items-center justify-center bg-black overflow-hidden">
-      <div
-        ref={containerRef}
-        className="h-dvh w-full max-w-[430px] overflow-y-auto snap-y snap-mandatory scrollbar-hide shadow-2xl"
-        style={{ scrollSnapType: "y mandatory" }}
-      >
-        <WeddingSlide backgroundImage={slideBackgrounds.heroVideo} showSwipeUp={false}>
-          <SlideHero onStart={() => scrollToSlide(1)} />
-        </WeddingSlide>
+    <div
+      ref={containerRef}
+      className="h-dvh w-full overflow-y-auto snap-y snap-mandatory scrollbar-hide"
+      style={{ scrollSnapType: "y mandatory" }}
+    >
+      <WeddingSlide backgroundImage={slideBackgrounds.heroVideo} showSwipeUp={false}>
+        <SlideHero onStart={() => scrollToSlide(1)} />
+      </WeddingSlide>
 
-        <WeddingSlide backgroundImage={slideBackgrounds.names} onNext={() => scrollToSlide(2)}>
-          <SlideNames />
-        </WeddingSlide>
+      <WeddingSlide backgroundImage={slideBackgrounds.names} onNext={() => scrollToSlide(2)}>
+        <SlideNames />
+      </WeddingSlide>
 
-        <WeddingSlide backgroundImage={slideBackgrounds.invite} onNext={() => scrollToSlide(3)} noOverlay>
-          <SlideInvite />
-        </WeddingSlide>
+      <WeddingSlide backgroundImage={slideBackgrounds.invite} onNext={() => scrollToSlide(3)} noOverlay>
+        <SlideInvite />
+      </WeddingSlide>
 
-        <WeddingSlide backgroundImage={slideBackgrounds.ceremony} onNext={() => scrollToSlide(4)} noOverlay>
-          <SlideCeremony />
-        </WeddingSlide>
+      <WeddingSlide backgroundImage={slideBackgrounds.ceremony} onNext={() => scrollToSlide(4)} noOverlay>
+        <SlideCeremony />
+      </WeddingSlide>
 
-        <WeddingSlide backgroundImage={slideBackgrounds.registry} onNext={() => scrollToSlide(5)}>
-          <SlideRegistry />
-        </WeddingSlide>
+      <WeddingSlide backgroundImage={slideBackgrounds.registry} onNext={() => scrollToSlide(5)}>
+        <SlideRegistry />
+      </WeddingSlide>
 
-        <WeddingSlide backgroundImage={slideBackgrounds.messages} onNext={() => scrollToSlide(6)}>
-          <SlideMessages />
-        </WeddingSlide>
+      <WeddingSlide backgroundImage={slideBackgrounds.messages} onNext={() => scrollToSlide(6)}>
+        <SlideMessages />
+      </WeddingSlide>
 
-        <WeddingSlide backgroundImage={slideBackgrounds.rsvp} showSwipeUp={false}>
-          <SlideRSVP />
-        </WeddingSlide>
-      </div>
+      <WeddingSlide backgroundImage={slideBackgrounds.rsvp} showSwipeUp={false}>
+        <SlideRSVP />
+      </WeddingSlide>
     </div>
   );
 }
