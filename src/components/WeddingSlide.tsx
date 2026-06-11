@@ -25,10 +25,10 @@ export function WeddingSlide({ backgroundImage, children, showSwipeUp = true, on
       {showSwipeUp && (
         <button
           onClick={onNext}
-          className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-pointer"
+          className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-75 hover:opacity-100 transition-opacity cursor-pointer"
         >
-          <ChevronUp className="swipe-indicator text-wedding-cream" size={28} />
-          <span className="text-xs tracking-[0.2em] uppercase text-wedding-cream font-serif">
+          <ChevronUp className="swipe-indicator text-wedding-champagne" size={24} />
+          <span className="wedding-caps text-[0.6rem] text-wedding-ivory">
             Swipe Up
           </span>
         </button>
