@@ -256,15 +256,26 @@ export function SlideRSVP() {
             transition={{ delay: 0.2, type: "spring", stiffness: 180, damping: 14 }}
             className="flex items-center justify-center rounded-full"
             style={{
-              width: 64,
-              height: 64,
+              width: 72,
+              height: 72,
               background: "radial-gradient(circle at 30% 30%, #fff2b0, #d4af37 60%, #8b6914)",
               boxShadow:
                 "0 0 22px rgba(255,215,0,0.55), inset 0 -3px 8px rgba(0,0,0,0.35), inset 0 3px 6px rgba(255,255,255,0.4)",
               border: "1px solid rgba(255,255,255,0.35)",
             }}
           >
-            <Check size={30} strokeWidth={3} style={{ color: "#2a1a05" }} />
+            <span
+              style={{
+                fontFamily: "var(--font-script, serif)",
+                fontSize: "2.4rem",
+                color: "#2a1a05",
+                lineHeight: 1,
+                marginTop: "4px",
+                textShadow: "0 1px 0 rgba(255,255,255,0.3)",
+              }}
+            >
+              {attending ? "J&L" : "❦"}
+            </span>
           </motion.div>
 
           <div className="flex items-center gap-2 mt-2">
@@ -282,7 +293,7 @@ export function SlideRSVP() {
               textShadow: "0 2px 10px rgba(0,0,0,0.7), 0 0 18px rgba(255,215,0,0.3)",
             }}
           >
-            Thank You
+            {attending ? "Thank You" : "With Gratitude"}
           </p>
 
           <p
@@ -295,7 +306,7 @@ export function SlideRSVP() {
               textShadow: "0 2px 6px rgba(0,0,0,0.7)",
             }}
           >
-            Your RSVP is Received
+            {attending ? "Your RSVP is Received" : "Your Response is Received"}
           </p>
 
           <p
@@ -309,7 +320,9 @@ export function SlideRSVP() {
               textShadow: "0 2px 8px rgba(0,0,0,0.7)",
             }}
           >
-            We are honoured by your presence and grateful for your wishes.
+            {attending
+              ? "We are honoured by your presence and grateful for your wishes."
+              : "You will be dearly missed on our special day. Thank you for your kind wishes."}
           </p>
         </motion.div>
       )}
