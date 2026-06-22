@@ -35,7 +35,7 @@ export function SlideRSVP() {
   .insert({
     name: trimmed,
     attending,
-    guests: attending ? Math.max(0, guests) : 0,
+    guests: attending ? Math.max(1, guests) : 1,
     note: wish || null,
   });
 
