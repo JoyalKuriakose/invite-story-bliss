@@ -232,29 +232,84 @@ export function SlideRSVP() {
         </motion.div>
       ) : (
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="rounded-lg px-6 py-5 flex flex-col items-center gap-2 w-full"
+          initial={{ opacity: 0, scale: 0.92, y: 12 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative rounded-2xl px-8 py-9 flex flex-col items-center gap-3 w-full overflow-hidden"
           style={{
-            background: "rgba(255,215,0,0.08)",
-            border: "1px solid rgba(255,215,0,0.25)",
-            backdropFilter: "blur(3px)",
+            background:
+              "linear-gradient(135deg, rgba(255,215,0,0.14), rgba(0,0,0,0.55) 60%, rgba(255,215,0,0.10))",
+            border: "1px solid rgba(255,215,0,0.45)",
+            backdropFilter: "blur(8px)",
+            boxShadow:
+              "0 0 28px rgba(255,215,0,0.22), 0 12px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08)",
           }}
         >
-          <Check size={28} style={{ color: "#ffd700" }} />
+          <span className="absolute top-3 left-3 text-[0.7rem]" style={{ color: "#ffd700", opacity: 0.7 }}>❦</span>
+          <span className="absolute top-3 right-3 text-[0.7rem]" style={{ color: "#ffd700", opacity: 0.7 }}>❦</span>
+          <span className="absolute bottom-3 left-3 text-[0.7rem]" style={{ color: "#ffd700", opacity: 0.7 }}>❦</span>
+          <span className="absolute bottom-3 right-3 text-[0.7rem]" style={{ color: "#ffd700", opacity: 0.7 }}>❦</span>
+
+          <motion.div
+            initial={{ scale: 0, rotate: -90 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 180, damping: 14 }}
+            className="flex items-center justify-center rounded-full"
+            style={{
+              width: 64,
+              height: 64,
+              background: "radial-gradient(circle at 30% 30%, #fff2b0, #d4af37 60%, #8b6914)",
+              boxShadow:
+                "0 0 22px rgba(255,215,0,0.55), inset 0 -3px 8px rgba(0,0,0,0.35), inset 0 3px 6px rgba(255,255,255,0.4)",
+              border: "1px solid rgba(255,255,255,0.35)",
+            }}
+          >
+            <Check size={30} strokeWidth={3} style={{ color: "#2a1a05" }} />
+          </motion.div>
+
+          <div className="flex items-center gap-2 mt-2">
+            <span className="h-px w-10" style={{ background: "linear-gradient(to right, transparent, #ffd700)" }} />
+            <span style={{ color: "#ffd700", fontSize: "0.6rem" }}>◆</span>
+            <span className="h-px w-10" style={{ background: "linear-gradient(to left, transparent, #ffd700)" }} />
+          </div>
 
           <p
-            className="font-serif text-base"
-            style={{ color: "#ffffff" }}
+            style={{
+              fontFamily: "var(--font-script, serif)",
+              fontSize: "clamp(1.8rem, 5vw, 2.4rem)",
+              color: "#ffd700",
+              lineHeight: 1.1,
+              textShadow: "0 2px 10px rgba(0,0,0,0.7), 0 0 18px rgba(255,215,0,0.3)",
+            }}
           >
-            Thank you!
+            Thank You
           </p>
 
           <p
-            className="text-xs font-serif text-center"
-            style={{ color: "#f5e6c8" }}
+            className="wedding-caps"
+            style={{
+              fontSize: "0.65rem",
+              color: "#f5e6c8",
+              letterSpacing: "0.4em",
+              fontWeight: 600,
+              textShadow: "0 2px 6px rgba(0,0,0,0.7)",
+            }}
           >
-            Your RSVP and wishes have been received.
+            Your RSVP is Received
+          </p>
+
+          <p
+            className="italic text-center mt-1"
+            style={{
+              fontFamily: "var(--font-body, serif)",
+              fontSize: "0.85rem",
+              color: "#fff8e7",
+              lineHeight: 1.6,
+              maxWidth: "260px",
+              textShadow: "0 2px 8px rgba(0,0,0,0.7)",
+            }}
+          >
+            We are honoured by your presence and grateful for your wishes.
           </p>
         </motion.div>
       )}
