@@ -53,7 +53,7 @@ export function SlideCeremony() {
           style={{
             fontFamily: "var(--font-script)",
             fontSize: "clamp(2.5rem, 6.5vw, 3.8rem)",
-            color: "#7a5a24",
+            color: "#b8860b",
             lineHeight: "1.1",
             textShadow: "0 1px 3px rgba(255,250,235,0.45)",
           }}
@@ -87,7 +87,7 @@ export function SlideCeremony() {
           style={{
             fontFamily: "var(--font-display)",
             fontSize: "clamp(1.5rem, 2.8vw, 1.8rem)",
-            color: "#7a5a24",
+            color: "#b8860b",
             letterSpacing: "0.15em",
           }}
         >
@@ -108,7 +108,7 @@ export function SlideCeremony() {
           style={{
             fontFamily: "var(--font-script)",
             fontSize: "clamp(2.5rem, 6.5vw, 3.8rem)",
-            color: "#7a5a24",
+            color: "#b8860b",
             lineHeight: "1.1",
             textShadow: "0 1px 3px rgba(255,250,235,0.45)",
           }}
