@@ -11,15 +11,7 @@ export function SlideInvite() {
         className="flex w-[min(82vw,440px)] flex-col items-center text-center"
         style={{ transform: "translateY(-6%)" }}
       >
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 1 }}
-          className="wedding-caps text-[0.68rem] mb-5"
-          style={{ color: "#5a4520" }}
-        >
-          A Sacred Verse
-        </motion.p>
+       
 
         <motion.p
           initial={{ opacity: 0 }}
@@ -28,7 +20,7 @@ export function SlideInvite() {
           className="italic leading-[1.85]"
           style={{
             fontFamily: "var(--font-body)",
-            fontWeight: 500,
+            fontWeight: 600,
             fontSize: "clamp(1.2rem, 3.4vw, 1.55rem)",
             color: "#3d2f12",
             textShadow: "0 1px 2px rgba(255,250,235,0.5)",
@@ -58,8 +50,11 @@ export function SlideInvite() {
           transition={{ delay: 0.85 }}
           className="wedding-caps"
           style={{
-            fontSize: "clamp(0.72rem, 1.8vw, 0.85rem)",
+            fontSize: "clamp(0.85rem, 2vw, 1.05rem)",
+            fontWeight: 550,
+            letterSpacing: "0.12em",
             color: "#3d2f12",
+            
           }}
         >
           സങ്കീർത്തനങ്ങൾ · 118 : 23

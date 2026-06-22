@@ -13,14 +13,21 @@ export function SlideCeremony() {
         viewport={{ once: true }}
         className="mt-32 flex flex-col items-center gap-4"
       >
-        <p className="wedding-caps text-[0.65rem]" style={{ color: "#5a4520" }}>
+        <p className="wedding-caps" style={{
+           color: "#5a4520",
+            fontFamily: "var(--font-body)",
+            fontSize: "clamp(0.8rem, 2vw, 0.8rem)",
+            lineHeight: "1",
+            maxWidth: "300px",
+            textShadow: "0 1px 2px rgba(255,250,235,0.45)",
+            }}>
           With Joyful Hearts
         </p>
         <p
           className="italic"
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
+            fontSize: "clamp(1.2rem, 2vw, 1.2rem)",
             color: "#3d2f12",
             lineHeight: "1.85",
             maxWidth: "300px",
@@ -44,7 +51,7 @@ export function SlideCeremony() {
         <p
           style={{
             fontFamily: "var(--font-script)",
-            fontSize: "clamp(2.8rem, 6.5vw, 3.8rem)",
+            fontSize: "clamp(2.5rem, 6.5vw, 3.8rem)",
             color: "#7a5a24",
             lineHeight: "1.1",
             textShadow: "0 1px 3px rgba(255,250,235,0.45)",
@@ -55,11 +62,13 @@ export function SlideCeremony() {
         <p
           className="wedding-caps mt-1"
           style={{
-            fontSize: "clamp(0.62rem, 1.4vw, 0.72rem)",
+            fontSize: "clamp(0.8rem, 1.4vw, 0.72rem)",
+            fontWeight: 700,
             color: "#5a4520",
           }}
         >
-          Son of C. Kuriakose &amp; Jincy Kuriakose
+        &nbsp;  S/o Mr. C. Kuriakose & Mrs. Jincy Kuriakose <br />
+        &nbsp;  Chirackal
         </p>
       </motion.div>
 
@@ -76,12 +85,12 @@ export function SlideCeremony() {
           className="italic"
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(1.1rem, 2.4vw, 1.4rem)",
+            fontSize: "clamp(1.5rem, 2.8vw, 1.8rem)",
             color: "#7a5a24",
             letterSpacing: "0.15em",
           }}
         >
-          and
+          &
         </span>
         <span className="h-px w-10" style={{ background: "rgba(122,90,36,0.5)" }} />
       </motion.div>
@@ -97,7 +106,7 @@ export function SlideCeremony() {
         <p
           style={{
             fontFamily: "var(--font-script)",
-            fontSize: "clamp(2.8rem, 6.5vw, 3.8rem)",
+            fontSize: "clamp(2.5rem, 6.5vw, 3.8rem)",
             color: "#7a5a24",
             lineHeight: "1.1",
             textShadow: "0 1px 3px rgba(255,250,235,0.45)",
@@ -108,11 +117,13 @@ export function SlideCeremony() {
         <p
           className="wedding-caps mt-1"
           style={{
-            fontSize: "clamp(0.62rem, 1.4vw, 0.72rem)",
+            fontSize: "clamp(0.8rem, 1.4vw, 0.72rem)",
+            fontWeight: 700,
             color: "#5a4520",
           }}
         >
-          Daughter of Joseph K.K &amp; Binu Joseph
+        &nbsp;&nbsp; D/o Mr. Joseph K K & Mrs. Binu Joseph <br />
+          Keechery Chamakkattu
         </p>
       </motion.div>
     </div>

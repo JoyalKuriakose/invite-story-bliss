@@ -1,21 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Loader2, Check, Heart } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
-type Rsvp = {
-  id: string;
-  name: string;
-  attending: boolean;
-  guests: number;
-};
 
-type Message = {
-  id: string;
-  name: string;
-  message: string;
-  created_at: string;
-};
 
 export function SlideRSVP() {
   const [name, setName] = useState("");
@@ -28,59 +16,7 @@ export function SlideRSVP() {
 
   const [error, setError] = useState<string | null>(null);
 
-  const [rsvps, setRsvps] = useState<Rsvp[]>([]);
-  const [messages, setMessages] = useState<Message[]>([]);
 
-  // Load RSVPs
-  const loadRsvps = async () => {
-    const { data } = await supabase
-      .from("rsvps")
-      .select("id,name,attending,guests")
-      .order("created_at", { ascending: false });
-
-    if (data) setRsvps(data as Rsvp[]);
-  };
-
-  // Load Messages
-  const loadMessages = async () => {
-    const { data } = await supabase
-      .from("messages")
-      .select("id,name,message,created_at")
-      .order("created_at", { ascending: false })
-      .limit(20);
-
-    if (data) setMessages(data as Message[]);
-  };
-
-  useEffect(() => {
-    loadRsvps();
-    loadMessages();
-
-    const rsvpChannel = supabase
-      .channel("rsvps-changes")
-      .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "rsvps" },
-        () => loadRsvps()
-      )
-      .subscribe();
-
-    const messageChannel = supabase
-      .channel("messages-changes")
-      .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "messages" },
-        () => loadMessages()
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(rsvpChannel);
-      supabase.removeChannel(messageChannel);
-    };
-  }, []);
-
-  // Submit RSVP + Message
   const submit = async () => {
     setError(null);
 
@@ -94,34 +30,25 @@ export function SlideRSVP() {
 
     setSubmitting(true);
 
-    // Insert RSVP
-    const { error: rsvpError } = await supabase.from("rsvps").insert({
-      name: trimmed.slice(0, 100),
-      attending,
-      guests: attending ? guests : 0,
-    });
-
-    // Insert Message if entered
-    if (wish) {
-      await supabase.from("messages").insert({
-        name: trimmed.slice(0, 100),
-        message: wish.slice(0, 500),
-      });
-    }
+    const { error } = await supabase
+  .from("rsvps")
+  .insert({
+    name: trimmed,
+    attending,
+    guests: attending ? Math.max(0, guests) : 0,
+    note: wish || null,
+  });
 
     setSubmitting(false);
 
-    if (rsvpError) {
-      setError("Could not submit. Please try again.");
+    if (error) {
+      console.error(error);
+      setError(error.message);
       return;
     }
 
     setSubmitted(true);
   };
-
-  const totalAttending = rsvps
-    .filter((r) => r.attending)
-    .reduce((sum, r) => sum + (r.guests || 1), 0);
 
   return (
     <div className="flex flex-col items-center gap-5 max-w-sm w-full px-4">
@@ -331,87 +258,6 @@ export function SlideRSVP() {
           </p>
         </motion.div>
       )}
-
-      {/* Total Attending */}
-      <div
-        className="rounded-lg px-5 py-2"
-        style={{
-          background: "rgba(255,255,255,0.05)",
-          border: "1px solid rgba(255,215,0,0.2)",
-          backdropFilter: "blur(3px)",
-        }}
-      >
-        <p
-          className="font-serif text-xs"
-          style={{ color: "#ffffff" }}
-        >
-          Total attending:{" "}
-          <span
-            className="text-base font-bold"
-            style={{ color: "#ffd700" }}
-          >
-            {totalAttending}
-          </span>
-        </p>
-      </div>
-
-      {/* Wishes List */}
-      <div className="w-full max-h-[28vh] overflow-y-auto flex flex-col gap-2 pr-1">
-
-        <p
-          className="text-center font-serif uppercase tracking-[0.25em] text-xs mb-1"
-          style={{
-            color: "#ffffff",
-            // textShadow: "0 2px 10px rgba(0,0,0,0.85)",
-          }}
-        >
-          Wishes For The Couple
-        </p>
-
-        {messages.map((m) => (
-          <div
-            key={m.id}
-            className="rounded-lg px-3 py-2 text-left"
-            style={{
-              background: "rgba(255,255,255,0.06)",
-              border: "1px solid rgba(255,215,0,0.2)",
-              backdropFilter: "blur(3px)",
-            }}
-          >
-            <p
-              className="font-serif italic leading-snug"
-              style={{
-                fontSize: "0.82rem",
-                color: "#ffffff",
-              }}
-            >
-              "{m.message}"
-            </p>
-
-            <p
-              style={{
-                fontFamily: "'Great Vibes', cursive",
-                fontSize: "1.2rem",
-                color: "#ffd700",
-                marginTop: "6px",
-              }}
-            >
-              — {m.name}
-            </p>
-          </div>
-        ))}
-
-        {messages.length === 0 && (
-          <p
-            className="text-xs font-serif italic text-center"
-            style={{
-              color: "#f5e6c8",
-            }}
-          >
-            Be the first to share a wish.
-          </p>
-        )}
-      </div>
     </div>
   );
 }

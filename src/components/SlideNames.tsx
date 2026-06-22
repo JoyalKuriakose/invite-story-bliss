@@ -2,68 +2,71 @@ import { motion } from "framer-motion";
 
 export function SlideNames() {
   return (
-    <div className="flex flex-col items-center gap-7 px-4">
-      <motion.p
-        initial={{ opacity: 0, y: -10 }}
+    <div className="flex flex-col items-center justify-center px-6 text-center">
+      
+     
+
+      {/* Names */}
+      <motion.h1
+        initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="wedding-caps text-[0.72rem] text-wedding-ivory/85"
-        style={{ textShadow: "0 2px 8px rgba(0,0,0,0.7)" }}
+        className="text-center"
+        style={{
+          fontFamily: "var(--font-script)",
+          fontSize: "clamp(3rem, 13vw, 7rem)",
+          lineHeight: 1.1,
+          fontWeight: 400,
+          color: "#f8f2ea",
+
+          
+        }}
       >
-        The Wedding Of
-      </motion.p>
+        Jikku  &amp; Lena
+      </motion.h1>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.15, duration: 1 }}
-        viewport={{ once: true }}
-        className="flex flex-col items-center"
-      >
-        <div className="flex items-center gap-4 mb-2">
-          <span className="h-px w-12 bg-wedding-champagne/60" />
-          <span className="ornament-dot" />
-          <span className="h-px w-12 bg-wedding-champagne/60" />
-        </div>
+      
 
-        <h1
-          className="wedding-name leading-[1] text-center"
-          style={{ fontSize: "clamp(4rem, 14vw, 7.5rem)" }}
-        >
-          Jikku
-        </h1>
-
-        <p
-          className="wedding-display text-wedding-ivory/90 italic -my-1"
-          style={{ fontSize: "clamp(1.1rem, 3vw, 1.4rem)" }}
-        >
-          &amp;
-        </p>
-
-        <h1
-          className="wedding-name leading-[1] text-center"
-          style={{ fontSize: "clamp(4rem, 14vw, 7.5rem)" }}
-        >
-          Lena
-        </h1>
-
-        <div className="flex items-center gap-4 mt-3">
-          <span className="h-px w-12 bg-wedding-champagne/60" />
-          <span className="ornament-dot" />
-          <span className="h-px w-12 bg-wedding-champagne/60" />
-        </div>
-      </motion.div>
-
+      {/* Subtitle */}
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.8 }}
+        transition={{ delay: 0.45, duration: 0.8 }}
         viewport={{ once: true }}
-        className="wedding-caps text-[0.7rem] text-wedding-ivory/75"
-        style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}
+        className="mt-10 tracking-[0.45em]"
+        style={{
+          fontSize: "clamp(0.72rem, 2vw, 1rem)",
+          color: "rgba(255,248,240,0.9)",
+          fontWeight: 300,
+          letterSpacing: "0.42em",
+
+          textShadow: `
+            0 2px 10px rgba(0,0,0,0.65)
+          `,
+        }}
       >
-        Twenty&nbsp;Four · August · MMXXVI
+        ARE GETTING MARRIED
+      </motion.p>
+
+      {/* Date */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.7, duration: 0.8 }}
+        viewport={{ once: true }}
+        className="mt-5"
+        style={{
+          fontSize: "clamp(0.7rem, 1.8vw, 0.9rem)",
+          letterSpacing: "0.28em",
+          color: "rgba(255,248,240,0.72)",
+
+          textShadow: `
+            0 2px 8px rgba(0,0,0,0.55)
+          `,
+        }}
+      >
+        TWENTY FOUR · AUGUST 
       </motion.p>
     </div>
   );
