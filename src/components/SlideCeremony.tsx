@@ -14,11 +14,12 @@ export function SlideCeremony() {
         className="mt-32 flex flex-col items-center gap-4"
       >
         <p className="wedding-caps" style={{
-           color: "#5a4520",
+           color: "#3d2f12",
             fontFamily: "var(--font-body)",
             fontSize: "clamp(0.8rem, 2vw, 0.8rem)",
             lineHeight: "1",
             maxWidth: "300px",
+            fontWeight: 700,
             textShadow: "0 1px 2px rgba(255,250,235,0.45)",
             }}>
           With Joyful Hearts
