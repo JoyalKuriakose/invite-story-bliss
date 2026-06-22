@@ -14,11 +14,12 @@ export function SlideCeremony() {
         className="mt-32 flex flex-col items-center gap-4"
       >
         <p className="wedding-caps" style={{
-           color: "#5a4520",
+           color: "#3d2f12",
             fontFamily: "var(--font-body)",
             fontSize: "clamp(0.8rem, 2vw, 0.8rem)",
             lineHeight: "1",
             maxWidth: "300px",
+            fontWeight: 700,
             textShadow: "0 1px 2px rgba(255,250,235,0.45)",
             }}>
           With Joyful Hearts
@@ -52,7 +53,7 @@ export function SlideCeremony() {
           style={{
             fontFamily: "var(--font-script)",
             fontSize: "clamp(2.5rem, 6.5vw, 3.8rem)",
-            color: "#7a5a24",
+            color: "#b8860b",
             lineHeight: "1.1",
             textShadow: "0 1px 3px rgba(255,250,235,0.45)",
           }}
@@ -86,7 +87,7 @@ export function SlideCeremony() {
           style={{
             fontFamily: "var(--font-display)",
             fontSize: "clamp(1.5rem, 2.8vw, 1.8rem)",
-            color: "#7a5a24",
+            color: "#b8860b",
             letterSpacing: "0.15em",
           }}
         >
@@ -107,7 +108,7 @@ export function SlideCeremony() {
           style={{
             fontFamily: "var(--font-script)",
             fontSize: "clamp(2.5rem, 6.5vw, 3.8rem)",
-            color: "#7a5a24",
+            color: "#b8860b",
             lineHeight: "1.1",
             textShadow: "0 1px 3px rgba(255,250,235,0.45)",
           }}

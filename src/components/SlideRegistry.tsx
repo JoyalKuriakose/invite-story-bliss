@@ -1,17 +1,11 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin, CalendarPlus } from "lucide-react";
+import { MapPin, CalendarPlus } from "lucide-react";
 
 export function SlideRegistry() {
-  
-  // Google Maps
   const openMaps = () => {
-    window.open(
-      "https://maps.app.goo.gl/x3ZrmJSKoFHFHLQ28?g_st=aw",
-      "_blank"
-    );
+    window.open("https://maps.app.goo.gl/x3ZrmJSKoFHFHLQ28?g_st=aw", "_blank");
   };
 
-  // Google Calendar
   const addToGoogleCalendar = () => {
     const url =
       "https://calendar.google.com/calendar/render?action=TEMPLATE" +
@@ -19,193 +13,222 @@ export function SlideRegistry() {
       "&dates=20260824T053000Z/20260824T083000Z" +
       "&details=Wedding+Ceremony" +
       "&location=St+George+Jacobite+Syrian+Church+Ponpally,+Kottayam,+Kerala";
-
     window.open(url, "_blank");
   };
 
   return (
-    <div className="flex flex-col items-center gap-8 max-w-sm text-center px-4">
-
+    <div className="flex flex-col items-center gap-7 w-[min(88vw,440px)] text-center">
       {/* Heading */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="text-xs tracking-[0.35em] uppercase font-serif font-bold"
-        style={{
-          color: "#ffffff",
-          textShadow: "0 2px 8px rgba(0,0,0,0.85)",
-        }}
+        className="flex flex-col items-center gap-3"
       >
-        The Ceremony
-      </motion.p>
+        <span
+          className="h-px w-20"
+          style={{ background: "linear-gradient(to right, transparent, #ffd700, transparent)" }}
+        />
+        <p
+          className="wedding-caps"
+          style={{
+            fontSize: "clamp(0.7rem, 1.8vw, 0.78rem)",
+            color: "#ffd700",
+            letterSpacing: "0.45em",
+            fontWeight: 600,
+            textShadow: "0 2px 8px rgba(0,0,0,0.7)",
+          }}
+        >
+          The Ceremony
+        </p>
+        <span
+          className="h-px w-20"
+          style={{ background: "linear-gradient(to right, transparent, #ffd700, transparent)" }}
+        />
+      </motion.div>
 
-      {/* Main Content */}
+      {/* Date — editorial */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
         viewport={{ once: true }}
-        className="flex flex-col items-center gap-6"
+        className="flex items-center justify-center gap-5"
       >
-
-        {/* Date */}
-        <div className="relative flex justify-center w-full">
-
-          {/* Calendar Icon */}
-          <Calendar
-            size={22}
-            style={{
-              color: "#ffffff",
-              filter: "drop-shadow(0 0 8px rgba(255,215,0,0.7))",
-              position: "absolute",
-              left: "-32px",
-              top: "50%",
-              transform: "translateY(-50%)",
-            }}
-          />
-
-          {/* Date Text */}
+        {/* Day */}
+        <div className="flex flex-col items-center">
           <span
-            className="font-serif font-bold text-center"
-            style={{
-              fontSize: "clamp(1.5rem, 4vw, 2rem)",
-              color: "#ffffff",
-              fontWeight: "700",
-              lineHeight: "1.5",
-              textShadow: `
-                0 2px 10px rgba(0,0,0,0.95),
-                0 0 12px rgba(255,255,255,0.15)
-              `,
-              letterSpacing: "0.5px",
-            }}
+            className="wedding-caps"
+            style={{ fontSize: "0.65rem", color: "#f5e6c8", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
           >
-            Monday, August 24, 2026
+            Monday
           </span>
-        </div>
-
-        {/* Time */}
-        <div className="flex items-center gap-3">
           <span
-            className="font-serif font-bold"
             style={{
-              fontSize: "clamp(1rem, 2vw, 1.2rem)",
-              color: "#f5e6c8",
-              textShadow: "0 2px 8px rgba(0,0,0,0.95)",
-              letterSpacing: "0.5px",
+              fontFamily: "var(--font-display, serif)",
+              fontSize: "clamp(2.4rem, 7vw, 3.2rem)",
+              color: "#ffffff",
+              lineHeight: 1,
+              textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 0 18px rgba(255,215,0,0.25)",
             }}
           >
-            11:00 AM
+            24
+          </span>
+          <span
+            className="wedding-caps mt-1"
+            style={{ fontSize: "0.65rem", color: "#f5e6c8", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
+          >
+            August
           </span>
         </div>
 
         {/* Divider */}
-        <div
-          className="h-px w-16"
-          style={{
-            background:
-              "linear-gradient(to right, transparent, #ffd700, transparent)",
-          }}
-        />
-
-        {/* Venue + Location */}
-        <div className="flex justify-center w-full">
-          <div className="relative flex flex-col items-center text-center">
-
-            {/* Map Icon */}
-            <MapPin
-              size={24}
-              style={{
-                color: "#ffd700",
-                filter: "drop-shadow(0 0 6px rgba(255,215,0,0.7))",
-                position: "absolute",
-                left: "-34px",
-                top: "8px",
-              }}
-            />
-
-            {/* Venue */}
-            <p
-              className="font-serif"
-              style={{
-                fontSize: "clamp(1.5rem, 4vw, 2rem)",
-                color: "#ffffff",
-                fontWeight: "700",
-                lineHeight: "1.5",
-                textShadow: `
-                  0 2px 10px rgba(0,0,0,0.95),
-                  0 0 12px rgba(255,255,255,0.15)
-                `,
-              }}
-            >
-              St George Jacobite
-              <br />
-              Syrian Church
-              <br />
-              Ponpally
-            </p>
-
-            {/* Location */}
-            <p
-              className="font-serif tracking-wide mt-2"
-              style={{
-                fontSize: "1rem",
-                color: "#f5e6c8",
-                fontWeight: "600",
-                textShadow: "0 2px 8px rgba(0,0,0,0.95)",
-                letterSpacing: "0.5px",
-              }}
-            >
-              Kottayam, Kerala
-            </p>
-          </div>
+        <div className="flex flex-col items-center gap-2">
+          <span className="h-12 w-px" style={{ background: "linear-gradient(to bottom, transparent, #ffd700, transparent)" }} />
+          <span style={{ color: "#ffd700", fontSize: "0.55rem", letterSpacing: "0.2em" }}>◆</span>
+          <span className="h-12 w-px" style={{ background: "linear-gradient(to bottom, transparent, #ffd700, transparent)" }} />
         </div>
+
+        {/* Time */}
+        <div className="flex flex-col items-center">
+          <span
+            className="wedding-caps"
+            style={{ fontSize: "0.65rem", color: "#f5e6c8", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
+          >
+            At
+          </span>
+          <span
+            style={{
+              fontFamily: "var(--font-display, serif)",
+              fontSize: "clamp(2.4rem, 7vw, 3.2rem)",
+              color: "#ffffff",
+              lineHeight: 1,
+              textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 0 18px rgba(255,215,0,0.25)",
+            }}
+          >
+            11:00
+          </span>
+          <span
+            className="wedding-caps mt-1"
+            style={{ fontSize: "0.65rem", color: "#f5e6c8", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
+          >
+            Morning
+          </span>
+        </div>
+      </motion.div>
+
+      {/* Year */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.35, duration: 0.7 }}
+        viewport={{ once: true }}
+        style={{
+          fontFamily: "var(--font-script, serif)",
+          fontSize: "clamp(1.4rem, 4vw, 1.8rem)",
+          color: "#ffd700",
+          letterSpacing: "0.05em",
+          textShadow: "0 2px 10px rgba(0,0,0,0.7)",
+          marginTop: "-0.5rem",
+        }}
+      >
+        Two Thousand Twenty Six
+      </motion.p>
+
+      {/* Ornament */}
+      <motion.div
+        initial={{ opacity: 0, scaleX: 0 }}
+        whileInView={{ opacity: 1, scaleX: 1 }}
+        transition={{ delay: 0.45, duration: 0.8 }}
+        viewport={{ once: true }}
+        className="flex items-center gap-3"
+      >
+        <span className="h-px w-14" style={{ background: "linear-gradient(to right, transparent, rgba(255,215,0,0.7))" }} />
+        <span style={{ color: "#ffd700", fontSize: "0.7rem" }}>❦</span>
+        <span className="h-px w-14" style={{ background: "linear-gradient(to left, transparent, rgba(255,215,0,0.7))" }} />
+      </motion.div>
+
+      {/* Venue */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.55, duration: 0.8 }}
+        viewport={{ once: true }}
+        className="flex flex-col items-center gap-2"
+      >
+        <p
+          className="wedding-caps"
+          style={{ fontSize: "0.65rem", color: "#f5e6c8", letterSpacing: "0.4em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
+        >
+          At the Venue of
+        </p>
+        <p
+          style={{
+            fontFamily: "var(--font-display, serif)",
+            fontSize: "clamp(1.35rem, 3.8vw, 1.7rem)",
+            color: "#ffffff",
+            fontWeight: 600,
+            lineHeight: 1.3,
+            textShadow: "0 2px 10px rgba(0,0,0,0.95), 0 0 14px rgba(255,255,255,0.12)",
+          }}
+        >
+          St George Jacobite
+          <br />
+          Syrian Church, Ponpally
+        </p>
+        <p
+          className="italic"
+          style={{
+            fontFamily: "var(--font-body, serif)",
+            fontSize: "0.9rem",
+            color: "#f5e6c8",
+            textShadow: "0 2px 8px rgba(0,0,0,0.9)",
+            letterSpacing: "0.08em",
+          }}
+        >
+          Kottayam, Kerala
+        </p>
       </motion.div>
 
       {/* Buttons */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.6 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
         viewport={{ once: true }}
-        className="flex flex-col items-center gap-4 w-full"
+        className="flex flex-col sm:flex-row items-center gap-3 w-full justify-center mt-1"
       >
-
-        {/* Location Button */}
         <button
           onClick={openMaps}
-          className="flex items-center gap-2 rounded-full px-7 py-3 text-sm uppercase tracking-[0.18em] backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-pointer font-serif font-bold"
+          className="flex items-center gap-2 rounded-full px-6 py-2.5 text-xs uppercase tracking-[0.22em] backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-pointer"
           style={{
-            background: "rgba(0,0,0,0.45)",
-            border: "1px solid rgba(255,215,0,0.55)",
-            color: "#ffffff",
-            boxShadow: `
-              0 0 12px rgba(255,215,0,0.25),
-              0 2px 10px rgba(0,0,0,0.35)
-            `,
+            background: "linear-gradient(135deg, rgba(255,215,0,0.18), rgba(0,0,0,0.45))",
+            border: "1px solid rgba(255,215,0,0.6)",
+            color: "#fff8e7",
+            fontFamily: "var(--font-body, serif)",
+            fontWeight: 600,
+            boxShadow: "0 0 16px rgba(255,215,0,0.2), 0 4px 14px rgba(0,0,0,0.4)",
           }}
         >
-          <MapPin size={16} style={{ color: "#ffd700" }} />
-          Location Map
+          <MapPin size={14} style={{ color: "#ffd700" }} />
+          Location
         </button>
 
-        {/* Add to Calendar Button */}
         <button
           onClick={addToGoogleCalendar}
-          className="flex items-center gap-2 rounded-full px-7 py-3 text-sm uppercase tracking-[0.18em] backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-pointer font-serif font-bold"
+          className="flex items-center gap-2 rounded-full px-6 py-2.5 text-xs uppercase tracking-[0.22em] backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-pointer"
           style={{
-            background: "rgba(0,0,0,0.45)",
-            border: "1px solid rgba(255,215,0,0.55)",
-            color: "#ffffff",
-            boxShadow: `
-              0 0 12px rgba(255,215,0,0.25),
-              0 2px 10px rgba(0,0,0,0.35)
-            `,
+            background: "linear-gradient(135deg, rgba(255,215,0,0.18), rgba(0,0,0,0.45))",
+            border: "1px solid rgba(255,215,0,0.6)",
+            color: "#fff8e7",
+            fontFamily: "var(--font-body, serif)",
+            fontWeight: 600,
+            boxShadow: "0 0 16px rgba(255,215,0,0.2), 0 4px 14px rgba(0,0,0,0.4)",
           }}
         >
-          <CalendarPlus size={16} style={{ color: "#ffd700" }} />
-          Add to Calendar
+          <CalendarPlus size={14} style={{ color: "#ffd700" }} />
+          Save the Date
         </button>
       </motion.div>
     </div>
