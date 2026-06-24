@@ -138,23 +138,50 @@ export function SlideRegistry() {
         </div>
       </motion.div>
 
-      {/* Year */}
-      <motion.p
+      {/* Countdown */}
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.35, duration: 0.7 }}
         viewport={{ once: true }}
-        style={{
-          fontFamily: "var(--font-script, serif)",
-          fontSize: "clamp(1.4rem, 4vw, 1.8rem)",
-          color: "#ffd700",
-          letterSpacing: "0.05em",
-          textShadow: "0 2px 10px rgba(0,0,0,0.7)",
-          marginTop: "-0.5rem",
-        }}
+        className="flex items-center justify-center gap-3"
+        style={{ marginTop: "-0.25rem" }}
       >
-        Two Thousand Twenty Six
-      </motion.p>
+        {[
+          { label: "Days", value: days },
+          { label: "Hrs", value: hours },
+          { label: "Min", value: minutes },
+          { label: "Sec", value: seconds },
+        ].map((u) => (
+          <div key={u.label} className="flex flex-col items-center">
+            <span
+              style={{
+                fontFamily: "var(--font-display, serif)",
+                fontSize: "clamp(1.4rem, 4.2vw, 1.9rem)",
+                color: "#ffd700",
+                lineHeight: 1,
+                textShadow: "0 2px 10px rgba(0,0,0,0.7), 0 0 14px rgba(255,215,0,0.25)",
+                minWidth: "2ch",
+                textAlign: "center",
+              }}
+            >
+              {String(u.value).padStart(2, "0")}
+            </span>
+            <span
+              className="wedding-caps mt-1"
+              style={{
+                fontSize: "0.55rem",
+                color: "#f5e6c8",
+                letterSpacing: "0.3em",
+                textShadow: "0 2px 6px rgba(0,0,0,0.85)",
+              }}
+            >
+              {u.label}
+            </span>
+          </div>
+        ))}
+      </motion.div>
+
 
       {/* Ornament */}
       <motion.div
