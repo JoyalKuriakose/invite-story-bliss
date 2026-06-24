@@ -1,69 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* =========================
-   FONTS — Classic Wedding
-========================= */
+/* Fonts are loaded via <link> in src/routes/__root.tsx
+   (Tailwind v4 Lightning CSS cannot resolve remote @import / @font-face URLs). */
 
-/* Display script for names */
-@font-face {
-  font-family: "Great Vibes";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/greatvibes/v19/RWmMoKWR9v4ksMfaWd_JN9XFiaQ.woff2)
-    format("woff2");
-}
-
-/* Secondary romantic script */
-@font-face {
-  font-family: "Pinyon Script";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/pinyonscript/v22/6xKpdSJbL9-e9LuoeQiDRQR8aOLQO4bhiDY.woff2)
-    format("woff2");
-}
-
-/* High-contrast display serif (Vogue-like) */
-@font-face {
-  font-family: "Italiana";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/italiana/v18/QldNNTtLsx4E__B0XQ.woff2)
-    format("woff2");
-}
-
-/* Elegant editorial serif — display */
-@font-face {
-  font-family: "Cormorant Garamond";
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjornFLsS6V7w.woff2)
-    format("woff2");
-}
-
-/* Elegant editorial serif — italic */
-@font-face {
-  font-family: "Cormorant Garamond";
-  font-style: italic;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v16/co3WmX5slCNuHLi8bLeY9MK7whWMhyjYrEPjsS6V7vEMog.woff2)
-    format("woff2");
-}
-
-/* Refined sans for small caps & UI */
-@font-face {
-  font-family: "Tenor Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/tenorsans/v24/bx6ANxqUneKx06UkIXISr3JyC22IyqI.woff2)
-    format("woff2");
-}
 
 /* =========================
    THEME VARIABLES
