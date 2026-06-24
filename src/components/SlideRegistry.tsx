@@ -99,7 +99,7 @@ export function SlideRegistry() {
             className="wedding-caps mt-1"
             style={{ fontSize: "0.65rem", color: "#f5e6c8", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
           >
-            August
+            August 2026
           </span>
         </div>
 
