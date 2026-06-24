@@ -24,6 +24,8 @@ function useCountdown() {
 
 export function SlideRegistry() {
   const { days, hours, minutes, seconds } = useCountdown();
+  const fmt = (v: number | null) => (v === null ? "--" : String(v).padStart(2, "0"));
+
 
   const openMaps = () => {
     window.open("https://maps.app.goo.gl/x3ZrmJSKoFHFHLQ28?g_st=aw", "_blank");
