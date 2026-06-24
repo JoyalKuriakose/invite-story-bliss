@@ -170,7 +170,7 @@ export function SlideRegistry() {
                 textAlign: "center",
               }}
             >
-              {String(u.value).padStart(2, "0")}
+              {fmt(u.value)}
             </span>
             <span
               className="wedding-caps mt-1"
