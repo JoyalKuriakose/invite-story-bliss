@@ -5,11 +5,13 @@ import { useEffect, useState } from "react";
 const TARGET = new Date("2026-08-24T11:00:00+05:30").getTime();
 
 function useCountdown() {
-  const [now, setNow] = useState(() => Date.now());
+  const [now, setNow] = useState<number | null>(null);
   useEffect(() => {
+    setNow(Date.now());
     const id = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(id);
   }, []);
+  if (now === null) return { days: null, hours: null, minutes: null, seconds: null };
   const diff = Math.max(0, TARGET - now);
   const days = Math.floor(diff / 86400000);
   const hours = Math.floor((diff % 86400000) / 3600000);
@@ -19,8 +21,11 @@ function useCountdown() {
 }
 
 
+
 export function SlideRegistry() {
   const { days, hours, minutes, seconds } = useCountdown();
+  const fmt = (v: number | null) => (v === null ? "--" : String(v).padStart(2, "0"));
+
 
   const openMaps = () => {
     window.open("https://maps.app.goo.gl/x3ZrmJSKoFHFHLQ28?g_st=aw", "_blank");
@@ -165,7 +170,7 @@ export function SlideRegistry() {
                 textAlign: "center",
               }}
             >
-              {String(u.value).padStart(2, "0")}
+              {fmt(u.value)}
             </span>
             <span
               className="wedding-caps mt-1"
