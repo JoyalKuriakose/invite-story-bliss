@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Loader2, Heart } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 
 
 
@@ -29,27 +28,13 @@ export function SlideRSVP() {
     }
 
     setSubmitting(true);
-
-    const { error } = await supabase
-  .from("rsvps")
-  .insert({
-    name: trimmed,
-    attending,
-    guests: attending ? Math.max(1, guests) : 0,
-
-    note: wish || null,
-  });
-
+    await new Promise((r) => setTimeout(r, 400));
     setSubmitting(false);
-
-    if (error) {
-      console.error(error);
-      setError(error.message);
-      return;
-    }
-
+    void wish;
+    void guests;
     setSubmitted(true);
   };
+
 
   return (
     <div className="flex flex-col items-center gap-5 max-w-sm w-full px-4">
